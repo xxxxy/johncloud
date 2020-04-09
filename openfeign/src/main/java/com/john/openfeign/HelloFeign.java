@@ -10,10 +10,11 @@
  */
 package com.john.openfeign;
 
+import com.john.commons.User;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * @author huangjy
@@ -24,4 +25,13 @@ public interface HelloFeign {
 
     @GetMapping("/hello")
     String hello();
+
+    @GetMapping("/helloGet")
+    String helloGet(@RequestParam("name") String name);
+
+    @PostMapping("/addUser1")
+    User addUser(@RequestBody User user);
+
+    @GetMapping("/get3")
+    void get3(@RequestHeader("name") String name);
 }
