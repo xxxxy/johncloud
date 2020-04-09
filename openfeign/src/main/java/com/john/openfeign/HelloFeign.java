@@ -12,13 +12,14 @@ package com.john.openfeign;
 
 import com.john.commons.User;
 import org.springframework.cloud.openfeign.FeignClient;
+import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.*;
 
 /**
  * @author huangjy
  * @since v1.0
  */
-@FeignClient("myprovider")
+@FeignClient(value = "myprovider", fallback = HelloServiceFallBack.class)
 public interface HelloFeign {
 
     @GetMapping("/hello")
@@ -32,4 +33,28 @@ public interface HelloFeign {
 
     @GetMapping("/get3")
     void get3(@RequestHeader("name") String name);
+}
+
+@Component
+class HelloServiceFallBack implements HelloFeign {
+
+    @Override
+    public String hello() {
+        return "error";
+    }
+
+    @Override
+    public String helloGet(String name) {
+        return null;
+    }
+
+    @Override
+    public User addUser(User user) {
+        return null;
+    }
+
+    @Override
+    public void get3(String name) {
+
+    }
 }
