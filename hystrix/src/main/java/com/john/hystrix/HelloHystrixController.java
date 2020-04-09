@@ -109,4 +109,21 @@ public class HelloHystrixController {
         System.out.println(user4);
         hystrixRequestContext.close();
     }
+
+    @GetMapping("/helloHystrix6")
+    public void helloHystrix6() throws ExecutionException, InterruptedException {
+        HystrixRequestContext hystrixRequestContext = HystrixRequestContext.initializeContext();
+        Future<User> usersByIds = userService.getUsersByIds(1);
+        Future<User> usersByIds2 = userService.getUsersByIds(2);
+        Future<User> usersByIds3 = userService.getUsersByIds(3);
+
+        System.out.println(usersByIds.get());
+        System.out.println(usersByIds2.get());
+        System.out.println(usersByIds3.get());
+
+        Thread.sleep(2000);
+        Future<User> usersByIds4 = userService.getUsersByIds(4);
+        System.out.println(usersByIds4.get());
+        hystrixRequestContext.close();
+    }
 }
