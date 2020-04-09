@@ -13,6 +13,8 @@ import com.john.commons.User;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
 
+import java.io.UnsupportedEncodingException;
+import java.net.URLDecoder;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -91,5 +93,10 @@ public class HelloController {
     @DeleteMapping("/deleteUser2/{id}")
     public void delete2(@PathVariable Integer id) {
         System.out.println(id);
+    }
+
+    @GetMapping("/get3")
+    public void get3(@RequestHeader String name) throws UnsupportedEncodingException {
+        System.out.println(URLDecoder.decode(name, "UTF-8"));
     }
 }
