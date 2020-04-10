@@ -10,6 +10,7 @@
 package com.john.commons.myprovider;
 
 import com.john.commons.User;
+import io.github.resilience4j.ratelimiter.annotation.RateLimiter;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
 
@@ -30,7 +31,12 @@ public class HelloController {
     Integer port;
 
     @GetMapping("/hello")
+    //添加限流
+    @RateLimiter(name = "rlA")
     public String hello() {
+        System.out.println("hello:" + port);
+        System.out.println(new Date());
+        //int a = 1 / 0;
         return "hello john; port:" + port;
     }
 
