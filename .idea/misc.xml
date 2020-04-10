@@ -15,18 +15,21 @@
         <option value="$PROJECT_DIR$/consul-provider/pom.xml" />
         <option value="$PROJECT_DIR$/consul-consumer/pom.xml" />
         <option value="$PROJECT_DIR$/hystrix/pom.xml" />
+        <option value="$PROJECT_DIR$/openfeign/pom.xml" />
+        <option value="$PROJECT_DIR$/resilience4j-cloud/pom.xml" />
+        <option value="$PROJECT_DIR$/commons/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">
       <set>
+        <option value="$PROJECT_DIR$/comon/pom.xml" />
+        <option value="$PROJECT_DIR$/hello-api/pom.xml" />
+        <option value="$PROJECT_DIR$/my-test/pom.xml" />
         <option value="$PROJECT_DIR$/provider/pom.xml" />
       </set>
     </option>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
-  <component name="ProjectDictionaryState">
-    <dictionary name="huangjy" />
-  </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
       <profile-state>
@@ -304,7 +307,7 @@
       </profile-state>
     </entry>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" project-jdk-name="1.8" project-jdk-type="JavaSDK">
-    <output url="file://$PROJECT_DIR$/out" />
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="false" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/classes" />
   </component>
 </project>
