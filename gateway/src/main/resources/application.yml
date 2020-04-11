@@ -1,0 +1,8 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: john_yml
+          uri: http://httpbin.org
+          predicates:
+            - Path=/get
