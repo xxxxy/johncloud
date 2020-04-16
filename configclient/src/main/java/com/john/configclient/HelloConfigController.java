@@ -21,10 +21,10 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class HelloConfigController {
     @Value("${john}")
-    private String john;
+    private String s;
 
     @RequestMapping("/helloConfig")
     public String helloConfig(){
-        return john;
+        return s;
     }
 }
